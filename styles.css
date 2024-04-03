@@ -295,7 +295,7 @@ html {
   border: none;
   background: white;
   float: left;
-  margin-top: 5px;
+  margin-top: 0px;
 }
 
 .search-button i {
@@ -583,7 +583,4 @@ html {
   90% { transform: translate(1px, 2px) rotate(0deg); }
   100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-
-
-
 

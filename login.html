@@ -1,54 +1,112 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="login.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="login.css">
+  
 </head>
+
 <body>
 
-<h2>Login & Signup</h2>
-<div class="container">
-  <form action="/action_page.php">
-    <div class="row">
-      <h2 style="text-align:center">Login with Social Media or Manually</h2>
-      <div class="vl">
-        <span class="vl-innertext">or</span>
-      </div>
-
-      <div class="col">
-        <a href="#" class="fb btn">
-          <i class="fa fa-facebook fa-fw"></i> Login with Facebook
-         </a>
-         <a href="#" class="instagram btn">
-            <i class="fa fa-instagram fa-fw"></i> Login with Instagram
-           </a>
-        <a href="#" class="google btn"><i class="fa fa-google fa-fw">
-          </i> Login with Google+
-        </a>
-      </div>
-
-      <div class="col">
-        <div class="hide-md-lg">
-          <p>Or sign in manually:</p>
+  <h2>Login & Signup</h2>
+  <div class="container">1
+    <form action="/action_page.php">
+      <div class="row">
+        <h2 style="text-align:center">Login with Social Media or Manually</h2>
+        <div class="vl">
+          <span class="vl-innertext">or</span>
         </div>
 
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <input type="submit" value="Login">
-      </div>
-      
-    </div>
-  </form>
-</div>
- 
-<div class="botton-73">
-  
-   
-  <a href="signup.html" class="button-73" role="button">Signup</a>
+        <div class="col">
+          <a href="#" class="fb btn">
+            <i class="fa fa-facebook fa-fw"></i> Login with Facebook
+          </a>
+          <a href="#" class="instagram btn">
+            <i class="fa fa-instagram fa-fw"></i> Login with Instagram
+          </a>
+          <a href="#" class="google btn"><i class="fa fa-google fa-fw">
+            </i> Login with Google
+          </a>
+        </div>
 
-     
-</div>
+        <div class="col">
+          <div class="hide-md-lg">
+            <p>Or sign in manually:</p>
+          </div>
+
+          <input type="text" name="username" placeholder="Username" required>
+          <input type="password" name="password" placeholder="Password" required>
+          <input type="submit" value="Login">
+        </div>
+
+      </div>
+    </form>
+  </div>
+
+  <div class="botton-73">
+    <a href="#" class="button-73" id="openSignupPopup">Signup</a>
+  </div>
+
+  <!-- Signup Popup -->
+  <div id="signupPopup" class="popup">
+    <div class="popup-content">
+      <span class="close" onclick="closeSignupPopup()">&times;</span>
+      <h2>Signup</h2>
+      <!-- Include your signup form here -->
+      <form action="action_page.php">
+        <!-- Your signup form content -->
+
+        <hr>
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" required>
+        <label for="phonenumber">Phone Number</label>
+        <input type="number" name="phonenumber" required>
+        <label for="dob">Date of Birth</label>
+        <input type="date" name="dob" required>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required>
+        <label for="password">Password:</label>
+        <input type="password" name="password" required>
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword" required>
+
+
+
+        <label for="termsCheckbox">I agree to the <a href="#" style="color:dodgerblue">Terms & Privacy</a>. <input type="checkbox" id="termsCheckbox" name="termsCheckbox"></label>
+
+
+        <div class="clearfix">
+          <button type="button" class="cancelbtn" onclick="cancelForm()">Cancel</button>
+          <button type="submit" class="signupbtn">Sign Up</button>
+        </div>
+    </div>
+    </form>
+  </div>
+  </div>
+
+  <script>
+    // Open Signup Popup
+    document.getElementById('openSignupPopup').addEventListener('click', function () {
+      document.getElementById('signupPopup').style.display = 'block';
+    });
+
+    // Close Signup Popup
+    function closeSignupPopup() {
+      document.getElementById('signupPopup').style.display = 'none';
+    }
+
+    function cancelForm() {
+        // You can perform any actions you want to cancel the form here.
+        // For example, you can reset the form fields or redirect the user.
+        // For demonstration, let's just alert a message.
+        alert("Form canceled.");
+    }
+
+  </script>
 
 </body>
+
 </html>
